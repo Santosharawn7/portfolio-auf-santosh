@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import experienceData from '../Data/experience.json'; // Update the path as needed
-import experienceDescription from '../Data/exp-description.json'; // Update the path as needed
+import experienceData from '../../Data/experience.json'; // Update the path as needed
+import experienceDescription from '../../Data/exp-description.json'; // Update the path as needed
 
 function Experience() {
   const [isOpen, setIsOpen] = useState(true); // Default to true for the first item

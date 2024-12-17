@@ -1,21 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { GitHub, LinkedIn } from '@mui/icons-material';
-import logo from '../assets/icon.ico'; // Adjust according to your project structure
+import logo from '../../assets/icon.ico'; // Adjust according to your project structure
 
-function Header() {
+function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const handleMouseEnter = () => {
-    setIsDropdownOpen(true);
-  };
-
-  const handleMouseLeave = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsDropdownOpen(false);
-    }
-  };
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -48,32 +37,10 @@ function Header() {
         <div className="w-auto hidden lg:block">
           <ul className="flex items-center justify-center space-x-9">
             <li>
-              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer">Home</a>
+              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer" href='/portfolio-auf-santosh'>Home</a>
             </li>
-            <li
-              className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer">Projects</a>
-              {isDropdownOpen && (
-                <ul
-                  className="absolute bg-gray-900 text-gray-200 mt-2 space-y-2 rounded-lg shadow-lg py-2 px-4 w-48"
-                  ref={dropdownRef}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <li>
-                    <a className="block text-sm hover:text-gray-300">Project 1</a>
-                  </li>
-                  <li>
-                    <a className="block text-sm hover:text-gray-300">Project 2</a>
-                  </li>
-                  <li>
-                    <a className="block text-sm hover:text-gray-300">Project 3</a>
-                  </li>
-                </ul>
-              )}
+            <li>
+              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer" href='/projects'>Projects</a>
             </li>
             <li>
               <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer">About</a>
@@ -162,4 +129,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;

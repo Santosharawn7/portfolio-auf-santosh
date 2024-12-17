@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import About from "../Components/About";
-import Hero from "../Components/Hero";
-import Experiences from "../Components/Experiences";
-import Education from "../Components/Education";
-import Contact from "../Components/Contact";
+import About from "../../Components/About";
+import Experiences from "../../Components/Experiences";
+import Education from "../../Components/Education";
+import Contact from "../../Components/Contact";
+import Header from "../../Components/Header";
 
 // Register ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +44,7 @@ function Home() {
     <div>
       {/* Add the class 'animateSection' to apply the animation to Hero and AboutUs sections */}
       <div className="animateSection">
-        <Hero/>
+        <Header/>
       </div>
       <div className="animateSection">
         <About />

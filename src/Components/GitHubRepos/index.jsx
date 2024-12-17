@@ -1,8 +1,6 @@
-// GitHubRepos.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useTheme } from '../../Context/ThemeContext'; // Import the theme context
-import '../../Styles/PJ.css';
+import { useTheme } from '../../Context/ThemeContext';
 
 const GitHubRepos = () => {
     const [profile, setProfile] = useState(null);
@@ -11,7 +9,7 @@ const GitHubRepos = () => {
     const [isForksHidden] = useState(true);
     const username = 'SantoshArawn7';
     const maxPages = 3;
-    const { theme } = useTheme(); // Use the theme context
+    const { theme } = useTheme();
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -46,65 +44,74 @@ const GitHubRepos = () => {
     });
 
     return (
-        <div className="github-repos">
+        <div className={`min-h-screen ${theme === 'light' ? 'bg-white text-blue-800' : 'bg-gray-900 text-gray-200'}`}>
             {profile && (
-                <div className="user-info">
-                    <figure>
-                        <img alt="user avatar" src={profile.avatar_url} />
-                    </figure>
-                    <div>
-                        <h2>
-                            <a href={profile.blog}><strong>{profile.name} - {profile.login}</strong></a>
-                        </h2>
-                        <p>{profile.bio}</p>
-                        <p>
-                            Followers: <strong>{profile.followers}</strong> | Repos: <strong>{profile.public_repos}</strong> | Gists: <strong>{profile.public_gists}</strong>
-                        </p>
-                        {/* <p> | Location: {profile.location}</p> */}
-                    </div>
+                <div className="flex flex-col items-center bg-white dark:bg-black rounded-t-lg p-6 shadow-lg">
+                    <img
+                        src={profile.avatar_url}
+                        alt="user avatar"
+                        className="rounded-full border-4 border-blue-500 w-36 h-36 shadow-md"
+                    />
+                    <h2 className="text-2xl font-semibold mt-4">
+                        <a href={profile.blog} className="text-blue-500 hover:underline">{profile.name} - {profile.login}</a>
+                    </h2>
+                    <p className="text-center mt-2">{profile.bio}</p>
+                    <p className="mt-2">
+                        Followers: <strong>{profile.followers}</strong> | Repos: <strong>{profile.public_repos}</strong> | Gists: <strong>{profile.public_gists}</strong>
+                    </p>
                 </div>
             )}
-            <div className="flex justify-center my-4">
+
+            <div className="flex justify-center my-6">
                 <input
                     type="text"
-                    className={`filter-repos text-center p-2 rounded-md ${
-                        theme === 'light' ? 'bg-gray-200 text-gray-800' : 'bg-gray-800 text-gray-100'
+                    className={`p-2 rounded-full w-1/2 text-center border-2 ${
+                        theme === 'light' ? 'bg-white border-blue-500 text-gray-800' : 'bg-gray-700 border-blue-500 text-gray-200'
                     }`}
                     placeholder="Search Repositories..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </div>
-            <ul className="repo-list">
+
+            <ul className="flex flex-wrap justify-center gap-6 p-6">
                 {filteredRepos.map((repo) => (
-                    <li key={repo.id} className="repo">
-                        <h3 className="repo-name">{repo.name}</h3>
-                        <span className="repo-description">{repo.description}</span>
-                        <div className="repo-info">
+                    <li
+                        key={repo.id}
+                        className={`w-full md:w-5/12 lg:w-1/4 p-4 rounded-xl border border-gray-300 dark:border-gray-700 shadow-md hover:shadow-lg transform hover:scale-105 transition`}
+                    >
+                        <h3 className="text-xl font-semibold text-blue-500 mb-2 text-center">{repo.name}</h3>
+                        <p className="text-sm text-black dark:text-gray-300 text-center mb-3">{repo.description}</p>
+                        <div className="flex justify-center gap-4 mb-2">
                             {repo.stargazers_count > 0 && (
-                                <a href={`${repo.html_url}/stargazers`} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={`${repo.html_url}/stargazers`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-yellow-400"
+                                >
                                     ⭐ {repo.stargazers_count}
                                 </a>
                             )}
-                            {repo.language && (
-                                <span
-                                    className="repo-language"
-                                    dangerouslySetInnerHTML={{ __html: devicons[repo.language] || repo.language }}
-                                ></span>
-                            )}
-                            {/* {repo.forks_count > 0 && (
-                                <a href={`${repo.html_url}/network/members`} target="_blank" rel="noopener noreferrer">
-                                    <i className="devicon-git-plain" style={{ color: '#555' }} /> {repo.forks_count}
-                                </a>
-                            )} */}
+                            {repo.language && <span className="text-gray-500">{repo.language}</span>}
                         </div>
-                        <div className="repo-links">
-                            <a className="link-btn" href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                                <i className="devicon-github-plain" /> Code
+                        <div className="flex justify-center gap-4 mt-4">
+                            <a
+                                href={repo.html_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-blue-500 border-2 text-white px-4 py-2 rounded-full hover:bg-blue-700 hover:text-white transition"
+                            >
+                                Code
                             </a>
                             {repo.homepage && (
-                                <a className="link-btn" href={repo.homepage} target="_blank" rel="noopener noreferrer">
-                                    <i className="devicon-chrome-plain" /> Live
+                                <a
+                                    href={repo.homepage}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-green-500 border-2 text-white px-4 py-2 rounded-full hover:bg-green-700 hover:text-white transition"
+                                >
+                                    Live
                                 </a>
                             )}
                         </div>
@@ -116,6 +123,7 @@ const GitHubRepos = () => {
 };
 
 export default GitHubRepos;
+
 
 // Ensure the `devicons` object remains the same as you shared previously
 const devicons = {

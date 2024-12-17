@@ -37,10 +37,10 @@ function Navbar() {
         <div className="w-auto hidden lg:block">
           <ul className="flex items-center justify-center space-x-9">
             <li>
-              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer" href='/portfolio-auf-santosh'>Home</a>
+              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer" href='/'>Home</a>
             </li>
             <li>
-              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer" href='/projects'>Projects</a>
+              <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer" href='/portfolio-auf-santosh/projects'>Projects</a>
             </li>
             <li>
               <a className="inline-block text-sm font-bold text-gray-200 hover:text-gray-300 cursor-pointer">About</a>

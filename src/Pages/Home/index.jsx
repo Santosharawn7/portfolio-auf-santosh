@@ -6,6 +6,7 @@ import Experiences from "../../Components/Experiences";
 import Education from "../../Components/Education";
 import Contact from "../../Components/Contact";
 import Header from "../../Components/Header";
+import SliderWithNavbar from "../../Components/Slider";
 
 // Register ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -41,7 +42,7 @@ function Home() {
   }, []);  // Empty dependency array to ensure the hook runs only once
 
   return (
-    <div>
+    <div className='text-left'>
       {/* Add the class 'animateSection' to apply the animation to Hero and AboutUs sections */}
       <div className="animateSection">
         <Header/>
@@ -50,10 +51,7 @@ function Home() {
         <About />
       </div>
       <div className="animateSection">
-        <Experiences />
-      </div>
-      <div className="animateSection">
-        <Education/>
+        <SliderWithNavbar />
       </div>
       <div className="animateSection">
         <Contact/>

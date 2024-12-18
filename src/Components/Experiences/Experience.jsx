@@ -23,7 +23,7 @@ function Experience() {
 
         return (
           <div className="w-full p-3" key={index}>
-            <div className="p-10 bg-gray-900 border border-gray-800 rounded-3xl">
+            <div className="p-10 bg-gray-900 border text-left border-gray-800 rounded-3xl">
               <div className="flex flex-wrap items-center -m-4">
                 <div className="w-full md:w-1/2 p-4">
                   <h2 className="font-heading mb-2 text-3xl text-white font-black tracking-tight">{experience.title}</h2>
@@ -62,9 +62,8 @@ function Experience() {
                 </div>
               </div>
               {isOpen && selectedExperience === index && (
-                <div className="mt-4 bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700">
+                <div className="mt-4 bg-gray-700 p-6 rounded-lg shadow-lg border border-gray-700">
                   <h3 className="text-white font-bold text-xl mb-2">Description:</h3>
-                  <p className="text-gray-300 mb-4">{experienceDetail?.keyAchievements}</p>
                   <ul className="text-gray-300 list-disc list-inside">
                     {experienceDetail?.responsibilities.map((item, idx) => (
                       <li key={idx} className="ml-2">{item}</li>

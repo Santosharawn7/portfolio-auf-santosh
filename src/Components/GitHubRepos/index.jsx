@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useTheme } from '../../Context/ThemeContext';
 
 const GitHubRepos = () => {
     const [profile, setProfile] = useState(null);
@@ -9,7 +8,6 @@ const GitHubRepos = () => {
     const [isForksHidden] = useState(true);
     const username = 'SantoshArawn7';
     const maxPages = 3;
-    const { theme } = useTheme();
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -44,30 +42,40 @@ const GitHubRepos = () => {
     });
 
     return (
-        <div className={`min-h-screen ${theme === 'light' ? 'bg-white text-blue-800' : 'bg-gray-900 text-gray-200'}`}>
+        <div className={`h-full bg-gray-700 text-gray-200`}>
             {profile && (
-                <div className="flex flex-col items-center bg-white dark:bg-black rounded-t-lg p-6 shadow-lg">
-                    <img
-                        src={profile.avatar_url}
-                        alt="user avatar"
-                        className="rounded-full border-4 border-blue-500 w-36 h-36 shadow-md"
-                    />
-                    <h2 className="text-2xl font-semibold mt-4">
-                        <a href={profile.blog} className="text-blue-500 hover:underline">{profile.name} - {profile.login}</a>
-                    </h2>
-                    <p className="text-center mt-2">{profile.bio}</p>
-                    <p className="mt-2">
-                        Followers: <strong>{profile.followers}</strong> | Repos: <strong>{profile.public_repos}</strong> | Gists: <strong>{profile.public_gists}</strong>
-                    </p>
-                </div>
+                <div
+                className="flex md:mx-48 flex-col items-center rounded-t-lg p-6 shadow-lg"
+                style={{
+                  backgroundImage: `url('https://t4.ftcdn.net/jpg/02/07/15/43/360_F_207154340_wLIJus4m3SBl5sAQmpqN3Um7REnUhskU.jpg')`,
+                  backgroundSize: 'screen',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              >
+                <img
+                  src={profile.avatar_url}
+                  alt="user avatar"
+                  className="rounded-full border-4 border-blue-500 w-36 h-36 shadow-md"
+                />
+                <h2 className="text-xl md:text-2xl font-semibold mt-4">
+                  <a href={profile.blog} className="text-blue-500 hover:underline">
+                    {profile.name} - {profile.login}
+                  </a>
+                </h2>
+                <p className="text-base md:text-xl text-center mt-2">{profile.bio}</p>
+                <p className="mt-2">
+                  Followers: <strong>{profile.followers}</strong> | Repos: <strong>{profile.public_repos}</strong> | Gists: <strong>{profile.public_gists}</strong>
+                </p>
+              </div>
+              
             )}
 
             <div className="flex justify-center my-6">
                 <input
                     type="text"
-                    className={`p-2 rounded-full w-1/2 text-center border-2 ${
-                        theme === 'light' ? 'bg-white border-blue-500 text-gray-800' : 'bg-gray-700 border-blue-500 text-gray-200'
-                    }`}
+                    className={`p-2 rounded-full w-1/2 text-center border-2 bg-gray-500 border-blue-500 text-gray-200'`}
+                
                     placeholder="Search Repositories..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
@@ -78,7 +86,7 @@ const GitHubRepos = () => {
                 {filteredRepos.map((repo) => (
                     <li
                         key={repo.id}
-                        className={`w-full md:w-5/12 lg:w-1/4 p-4 rounded-xl border border-gray-300 dark:border-gray-700 shadow-md hover:shadow-lg transform hover:scale-105 transition`}
+                        className={`w-full md:w-5/12 lg:w-1/4 p-4 rounded-xl border bg-gray-900 border-gray-300 dark:border-gray-300 shadow-md hover:shadow-lg transform hover:scale-105 transition`}
                     >
                         <h3 className="text-xl font-semibold text-blue-500 mb-2 text-center">{repo.name}</h3>
                         <p className="text-sm text-black dark:text-gray-300 text-center mb-3">{repo.description}</p>

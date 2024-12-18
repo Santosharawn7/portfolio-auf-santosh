@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import educationData from '../Data/education.json';
+import educationData from '../../Data/education.json';
 
 const Education = () => {
     const [education, setEducation] = useState([]);
@@ -9,7 +9,7 @@ const Education = () => {
     }, []);
 
     return (
-        <section className="py-10 bg-gray-900 overflow-hidden">
+        <section className="py-10 w-full bg-gray-700 overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="py-16 px-8 bg-gray-900 border border-gray-800 rounded-3xl">
                     <div className="max-w-7xl mx-auto">

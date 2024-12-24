@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:icalendar-ruby
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+DTSTART:20250309T030000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZNAME:EDT
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:20241103T010000
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZNAME:EST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20241219T165221Z
+UID:f5171c92-4179-4ea4-886b-420d8fa58968
+DTSTART;TZID=America/New_York:20241220T150000
+DTEND;TZID=America/New_York:20241220T153000
+DESCRIPTION:Hi Santosh\,\n\nThank you for sharing your availability! You're
+  confirmed for Date/Time: Dec 20\, 2024 3:00pm-3:30pm EST\nInterviewers: A
+ man Sheena\n\nGoogle Meet: https://meet.google.com/gua-tefd-qeg. Your recr
+ uiter will give you a call directly at 6479949601.\n\nIf you require reaso
+ nable accommodations\, please email: recruiting-accommodations@robinhood.c
+ om\n\nPlease let me know if you have any questions.\n\nBest\,\nAman Sheena
+ \nRobinhood Recruiting Team\n\nOur team is here to enable an inclusive and
+  welcoming interview experience for all candidates. If you need additional
+  assistance throughout the interview process related to a physical or ment
+ al condition or there is something our team can do to enable a more access
+ ible experience at any time\, please email our accommodations alias at rec
+ ruiting-accommodations@robinhood.com ( recruiting-accommodations@robinhood
+ .com ).
+LOCATION:null
+SUMMARY:Interview with Robinhood
+END:VEVENT
+END:VCALENDAR

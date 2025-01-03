@@ -1,33 +1,42 @@
 {
-    "education": [
-      {
-        "institution": "Tribhuvan University",
-        "location": "Kathmandu, Nepal",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/54/Tribhuvan_University_logo.svg/1200px-Tribhuvan_University_logo.svg.png", 
-        "programs": [
-          {
-            "title": "Bachelor of Science in Computer Science and Information Technology",
-            "duration": "Sep 2013 – Aug 2017"
-          }
-        ]
-      },
-      {
-        "institution": "Seneca Polytechnic",
-        "location": "Toronto, ON, Canada",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Seneca-logo.svg/2560px-Seneca-logo.svg.png", 
-        "programs": [
-          {
-            "title": "Postgraduate in Business Analytics",
-            "gpa": "GPA 4.0",
-            "duration": "May 2022 – Dec 2022"
-          },
-          {
-            "title": "Postgraduate in Project Management and Information Technology",
-            "gpa": "GPA 3.9",
-            "duration": "May 2023 – Dec 2023"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "education": [
+    {
+      "institution": "Tribhuvan University",
+      "location": "Kathmandu, Nepal",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/54/Tribhuvan_University_logo.svg/1200px-Tribhuvan_University_logo.svg.png",
+      "programs": [
+        {
+          "title": "Bachelor of Science in Computer Science and Information Technology",
+          "duration": "Sep 2013 – Aug 2017"
+        }
+      ],
+      "description": [
+        "Comprehensive curriculum with practical and theoretical knowledge.",
+        "Exposure to industry-relevant projects and tools.",
+        "Strong focus on analytical and problem-solving skills."
+      ]
+    },
+    {
+      "institution": "Seneca Polytechnic",
+      "location": "Toronto, ON, Canada",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Seneca-logo.svg/2560px-Seneca-logo.svg.png",
+      "programs": [
+        {
+          "title": "Postgraduate in Business Analytics",
+          "gpa": "GPA 4.0",
+          "duration": "May 2022 – Dec 2022"
+        },
+        {
+          "title": "Postgraduate in Project Management and Information Technology",
+          "gpa": "GPA 3.9",
+          "duration": "May 2023 – Dec 2023"
+        }
+      ],
+      "description": [
+        "Hands-on training in cutting-edge technologies and methodologies.",
+        "Collaboration with diverse teams on real-world projects.",
+        "Emphasis on leadership and strategic decision-making skills."
+      ]
+    }
+  ]
+}

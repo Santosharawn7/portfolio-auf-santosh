@@ -10,5 +10,8 @@ export default defineConfig({
       '@emotion/react': '@emotion/react',
     }
   },
-  base: "portfolio-auf-santosh/"
+  base: "portfolio-auf-santosh/",
+  optimizeDeps: {
+    include: ['@material-tailwind/react'],
+  },
 })

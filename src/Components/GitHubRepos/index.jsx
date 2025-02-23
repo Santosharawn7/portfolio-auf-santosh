@@ -114,13 +114,13 @@ const GitHubRepos = () => {
               key={repo.id}
               className="w-full lg:w-1/3 p-4 rounded-xl border bg-gray-900 border-gray-300 dark:border-gray-300 shadow-md hover:shadow-lg transform hover:scale-105 transition"
             >
-              <h3 className="text-xl font-semibold text-blue-500 mb-2 text-center">
+              <h3 className="text-xs md:text-xl font-semibold text-blue-500 mb-2 text-center">
                 {repo.name}
               </h3>
-              <p className="text-sm text-black dark:text-gray-300 text-center mb-3">
+              <p className="text-xs md:text-sm text-black dark:text-gray-300 text-center mb-3">
                 {repo.description}
               </p>
-              <div className="flex justify-center gap-4 mb-2">
+              <div className="text-xs md:text-sm flex justify-center gap-4 mb-2">
                 {repo.language && (
                   <span className="text-gray-500 flex items-center">
                     {renderDevicon(repo.language)}
@@ -138,23 +138,23 @@ const GitHubRepos = () => {
                   </a>
                 )}
               </div>
-              <div className="flex justify-center gap-4 mt-4">
+              <div className="flex text-center flex-wrap justify-center gap-4 mt-4">
                 <a
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-500 border-2 text-white px-4 py-2 rounded-full hover:bg-blue-700 hover:text-white transition"
+                  className="md:w-auto bg-blue-500 border-2 text-white px-4 py-2 rounded-full hover:bg-blue-700 hover:text-white transition-all duration-200"
                 >
-                  Code
+                  <span className="text-xs md:text-base">Code</span>
                 </a>
                 {repo.homepage && (
                   <a
                     href={repo.homepage}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-green-500 border-2 text-white px-4 py-2 rounded-full hover:bg-green-700 hover:text-white transition"
+                    className=" md:w-auto bg-green-500 border-2 text-white px-4 py-2 rounded-full hover:bg-green-700 hover:text-white transition-all duration-200"
                   >
-                    Live
+                    <span className="text-xs md:text-base">Live</span>
                   </a>
                 )}
               </div>

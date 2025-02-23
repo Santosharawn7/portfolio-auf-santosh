@@ -27,9 +27,9 @@ const HeroSection = ({
       {/* Content */}
       <div className="relative z-10 text-white flex flex-col lg:flex-row items-center justify-between max-w-6xl w-full px-6 lg:px-12 mt-4">
         {/* Left Side */}
-        <div className="max-w-lg text-center lg:text-left">
-          <h1 className="text-4xl text-white font-bold mb-4">{title}</h1>
-          <p className="text-lg">{description}</p>
+        <div className="max-w-lg text-center md:text-left lg:text-left">
+          <h1 className="text-xl md:text-4xl text-white font-bold mb-4">{title}</h1>
+          <p className="text-base md:text-lg">{description}</p>
         </div>
 
         {/* Right Side */}
